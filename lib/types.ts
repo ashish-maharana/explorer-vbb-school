@@ -1,0 +1,79 @@
+export type NavItem = {
+  label: string;
+  href: string;
+};
+
+export type HeroContent = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  primaryCta: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+};
+
+export type SectionIntro = {
+  eyebrow: string;
+  title: string;
+  description: string;
+};
+
+export type FeatureItem = {
+  title: string;
+  description: string;
+  icon: string;
+};
+
+export type ProgramItem = FeatureItem & {
+  tag?: string;
+};
+
+export type TimelineItem = {
+  year: string;
+  title: string;
+  description: string;
+};
+
+export type StatItem = {
+  label: string;
+  value: number;
+  suffix?: string;
+  description: string;
+};
+
+export type LegacyStatItem = {
+  label: string;
+  value: string;
+};
+
+export type CurriculumCardItem = {
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageAlt: string;
+};
+
+export type CoCurricularItem = {
+  title: string;
+  description: string;
+};
+
+export type AdmissionsFormField = {
+  label: string;
+  name: string;
+  type: "text" | "email";
+  placeholder: string;
+};
+
+export type AdmissionsUpdatesContent = {
+  title: string;
+  description: string;
+  fields: AdmissionsFormField[];
+  message: { label: string; name: string; placeholder: string };
+  submitLabel: string;
+};
+
+export type MetadataInput = {
+  title: string;
+  description: string;
+  path: string;
+};
