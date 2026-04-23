@@ -84,7 +84,7 @@ export function AboutPeopleTabs({ management, faculty }: AboutPeopleTabsProps) {
         >
           <PeopleCardsGrid members={management.leaders} imageClassName={unifiedPortraitImageClass} />
 
-          <article className="signal-card glass-panel relative overflow-hidden p-7 sm:p-9">
+          <article className="signal-card glass-panel relative mt-10 overflow-hidden p-7 sm:p-9">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-600 dark:text-cyan-300">
               {management.chairmanMessage.title}
             </p>
