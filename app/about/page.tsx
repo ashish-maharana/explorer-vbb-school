@@ -1,9 +1,19 @@
+import { AboutPeopleTabs } from "@/components/about-people-tabs";
 import { CTASection } from "@/components/cta-section";
 import { GlowCard } from "@/components/glow-card";
 import { PageHero } from "@/components/page-hero";
+import { Reveal } from "@/components/reveal";
 import { SectionHeader } from "@/components/section-header";
 import { Timeline } from "@/components/timeline";
-import { aboutHero, coreValues, differentiators, missionVision, philosophyTimeline } from "@/data/about";
+import {
+  aboutHero,
+  coreValues,
+  differentiators,
+  facultyContent,
+  managementContent,
+  missionVision,
+  philosophyTimeline,
+} from "@/data/about";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -33,13 +43,27 @@ export default function AboutPage() {
 
       <section className="section-wrap">
         <SectionHeader
+          eyebrow="Our People"
+          title="Management and Faculty in One View"
+          description={managementContent.quickIntro}
+        />
+      </section>
+
+      <AboutPeopleTabs management={managementContent} faculty={facultyContent} />
+
+      <div className="beam-divider section-wrap" aria-hidden="true" />
+
+      <section className="section-wrap">
+        <SectionHeader
           eyebrow="Core Values"
           title="Our Culture Is Built on Purpose"
           description="These values shape the way we teach, mentor, and prepare students for life."
         />
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {coreValues.map((value) => (
-            <GlowCard key={value.title} {...value} />
+            <Reveal key={value.title}>
+              <GlowCard {...value} />
+            </Reveal>
           ))}
         </div>
       </section>
@@ -63,7 +87,9 @@ export default function AboutPage() {
           />
           <div className="mt-6 space-y-5">
             {differentiators.map((item) => (
-              <GlowCard key={item.title} {...item} />
+              <Reveal key={item.title}>
+                <GlowCard {...item} />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -72,7 +98,7 @@ export default function AboutPage() {
       <section className="section-wrap">
         <CTASection
           title="Experience the Explorer & V.B.B. Difference"
-          description="Visit the campus, meet our faculty, and see how we combine values-led education with forward-looking learning."
+          description="Visit the campus, meet our management and faculty, and see how values-led education meets future-ready learning."
           primary={{ label: "Plan a Visit", href: "/contact" }}
           secondary={{ label: "View Admissions", href: "/admissions" }}
         />

@@ -77,3 +77,42 @@ export type MetadataInput = {
   description: string;
   path: string;
 };
+
+export type PersonProfile = {
+  name: string;
+  role: string;
+  imageSrc: string;
+  imageAlt: string;
+  bio: string;
+  tags?: string[];
+};
+
+export type ManagementMessage = {
+  title: string;
+  intro: string;
+  quote: string;
+  quoteSource: string;
+  paragraphs: string[];
+};
+
+export type ManagementContent = {
+  quickIntro: string;
+  chairmanMessage: ManagementMessage;
+  leaders: PersonProfile[];
+};
+
+export type FacultyContent = {
+  quickIntro: string;
+  members: PersonProfile[];
+};
+
+export type AboutQuickNavItem = {
+  label: string;
+  href: string;
+};
+
+export type GalleryItem = {
+  src: string;
+  alt: string;
+  title: string;
+};

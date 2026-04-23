@@ -1,10 +1,10 @@
-import Image from "next/image";
+import { ActivitiesGalleryTabs } from "@/components/activities-gallery-tabs";
 import { CTASection } from "@/components/cta-section";
 import { GlowCard } from "@/components/glow-card";
 import { PageHero } from "@/components/page-hero";
 import { ProgramCard } from "@/components/program-card";
 import { SectionHeader } from "@/components/section-header";
-import { activitiesHero, activityPrograms, galleryItems, lifeSkills } from "@/data/activities";
+import { activitiesHero, activityPrograms, campusGalleryItems, lifeSkills, schoolTripsGalleryItems } from "@/data/activities";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -53,15 +53,8 @@ export default function ActivitiesPage() {
           title="Moments That Shape the Student Journey"
           description="A snapshot of how students engage, perform, collaborate, and grow through campus life."
         />
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
-          {galleryItems.map((item) => (
-            <article key={item.title} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/15 dark:bg-white/5">
-              <Image src={item.src} alt={item.alt} width={960} height={640} className="h-56 w-full object-cover" />
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{item.title}</h3>
-              </div>
-            </article>
-          ))}
+        <div className="mt-8">
+          <ActivitiesGalleryTabs campusItems={campusGalleryItems} schoolTripItems={schoolTripsGalleryItems} />
         </div>
       </section>
 
