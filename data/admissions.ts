@@ -5,6 +5,8 @@ export const admissionsHero: HeroContent = {
   title: "Admissions Open for Future-Ready Learning",
   description:
     "Join a school environment where academic rigor, communication confidence, and holistic development come together for meaningful student success.",
+  imageSrc: "/images/activities/students-taking-oath.webp",
+  imageAlt: "Explorer school students gathered for a school ceremony",
   primaryCta: { label: "Start Inquiry", href: "/contact" },
   secondaryCta: { label: "Call Admissions", href: "tel:+919427472781" },
 };

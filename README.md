@@ -47,4 +47,4 @@ Update these files to edit headlines, section descriptions, cards, stats, proces
 ## Notes
 - No CMS, no database, no backend, no API routes.
 - Contact form UI is static and intentionally does not submit.
-- Theme toggle supports dark/light mode with localStorage persistence.
+- The site uses a default light theme.

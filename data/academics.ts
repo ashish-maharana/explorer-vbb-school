@@ -5,6 +5,8 @@ export const academicsHero: HeroContent = {
   title: "Broad, Balanced, and Future-Relevant Curriculum",
   description:
     "Our academic framework strengthens foundational learning while building analytical thinking, communication skills, and confidence for long-term success.",
+  imageSrc: "/images/home/curriculum-primary-education.webp",
+  imageAlt: "Primary students learning in an Explorer school classroom",
   primaryCta: { label: "Admissions Open", href: "/admissions" },
   secondaryCta: { label: "Contact School", href: "/contact" },
 };

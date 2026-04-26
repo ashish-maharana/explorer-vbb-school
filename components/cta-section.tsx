@@ -12,11 +12,13 @@ export function CTASection({
   secondary?: { label: string; href: string };
 }) {
   return (
-    <section className="rounded-3xl border border-cyan-300/55 bg-gradient-to-br from-cyan-50 via-white to-blue-100 p-8 shadow-sm sm:p-10 dark:border-cyan-400/35 dark:bg-gradient-to-br dark:from-slate-900 dark:via-slate-950 dark:to-cyan-950/50">
-      <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+    <section className="scallop-y relative overflow-hidden rounded-[2rem] bg-[#6d1b7b] p-8 text-white shadow-[0_24px_64px_rgba(109,27,123,0.22)] sm:p-10">
+      <div className="pointer-events-none absolute -left-8 top-8 h-24 w-24 rounded-full bg-[#f45fa2]" />
+      <div className="pointer-events-none absolute bottom-5 right-8 h-16 w-16 rounded-full bg-[#ffd84d]" />
+      <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl">
-          <h2 className="text-3xl font-semibold text-slate-900 sm:text-4xl dark:text-white">{title}</h2>
-          <p className="mt-4 text-slate-700 dark:text-slate-300">{description}</p>
+          <h2 className="text-3xl font-semibold leading-tight text-white sm:text-5xl">{title}</h2>
+          <p className="mt-4 font-semibold leading-7 text-white/85">{description}</p>
         </div>
         <div className="flex flex-wrap gap-3">
           <Link className="btn-primary" href={primary.href}>

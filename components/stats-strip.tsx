@@ -43,13 +43,13 @@ function Counter({ item }: { item: StatItem }) {
   const { count, ref } = useCountUp(item.value);
 
   return (
-    <div ref={ref} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/15 dark:bg-white/5">
-      <p className="text-3xl font-semibold text-slate-900 sm:text-4xl dark:text-white">
+    <div ref={ref} className="stat-holo play-card text-center">
+      <p className="relative z-[1] text-4xl font-semibold text-[#6d1b7b] sm:text-5xl">
         {count}
         {item.suffix}
       </p>
-      <p className="mt-2 text-lg font-medium text-cyan-700 dark:text-cyan-200">{item.label}</p>
-      <p className="mt-3 text-sm text-slate-700 dark:text-slate-300">{item.description}</p>
+      <p className="relative z-[1] mt-2 text-lg font-extrabold text-[#15112b]">{item.label}</p>
+      <p className="relative z-[1] mt-3 text-sm font-medium leading-6 text-[#5b5570]">{item.description}</p>
     </div>
   );
 }

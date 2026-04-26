@@ -5,23 +5,39 @@ type GlowCardProps = {
   description: string;
   icon: string;
   tag?: string;
+  variant?: "card" | "flat";
 };
 
-export function GlowCard({ title, description, icon, tag }: GlowCardProps) {
+export function GlowCard({ title, description, icon, tag, variant = "card" }: GlowCardProps) {
+  if (variant === "flat") {
+    return (
+      <article className="flex gap-4">
+        <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#22c7e8]/18 text-[#6d1b7b] ring-2 ring-white">
+          <IconGlyph name={icon} />
+        </div>
+        <div>
+          {tag ? <span className="sticker mb-3 bg-[#f45fa2] text-white">{tag}</span> : null}
+          <h3 className="text-xl font-semibold text-[#15112b]">{title}</h3>
+          <p className="mt-3 font-medium leading-7 text-[#5b5570]">{description}</p>
+        </div>
+      </article>
+    );
+  }
+
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-cyan-300 hover:shadow-[0_8px_30px_rgba(14,165,233,0.12)] dark:border-white/15 dark:bg-white/5 dark:hover:border-cyan-300/60 dark:hover:bg-white/10">
-      <div className="absolute -right-16 -top-16 h-32 w-32 rounded-full bg-cyan-400/20 blur-2xl transition group-hover:bg-cyan-300/30 dark:bg-cyan-400/20" />
+    <article className="play-card group transition hover:-translate-y-1 hover:shadow-[0_20px_46px_rgba(109,27,123,0.14)]">
+      <div className="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#ffd84d]/60 transition group-hover:bg-[#2ee881]/60" />
       <div className="relative">
         {tag ? (
-          <span className="inline-flex rounded-full border border-cyan-500/35 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-700 dark:border-cyan-300/40 dark:bg-cyan-300/10 dark:text-cyan-200">
+          <span className="sticker bg-[#f45fa2] text-white">
             {tag}
           </span>
         ) : null}
-        <div className="mt-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-slate-100 text-cyan-700 dark:border-white/20 dark:bg-slate-900/60 dark:text-cyan-200">
+        <div className="mt-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#22c7e8]/18 text-[#6d1b7b] ring-2 ring-white">
           <IconGlyph name={icon} />
         </div>
-        <h3 className="mt-4 text-xl font-semibold text-slate-900 dark:text-white">{title}</h3>
-        <p className="mt-3 leading-7 text-slate-700 dark:text-slate-300">{description}</p>
+        <h3 className="mt-4 text-xl font-semibold text-[#15112b]">{title}</h3>
+        <p className="mt-3 font-medium leading-7 text-[#5b5570]">{description}</p>
       </div>
     </article>
   );

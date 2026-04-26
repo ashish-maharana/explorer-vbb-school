@@ -16,7 +16,7 @@ export const metadata = createPageMetadata({
 
 export default function AcademicsPage() {
   return (
-    <div className="pb-10">
+    <div className="page-grid pb-10">
       <section className="section-wrap rounded-3xl p-2">
         <PageHero content={academicsHero} />
       </section>

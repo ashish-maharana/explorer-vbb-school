@@ -15,7 +15,7 @@ export const metadata = createPageMetadata({
 
 export default function AdmissionsPage() {
   return (
-    <div className="pb-10">
+    <div className="page-grid pb-10">
       <section className="section-wrap rounded-3xl p-2">
         <PageHero content={admissionsHero} />
       </section>
@@ -40,11 +40,11 @@ export default function AdmissionsPage() {
           description="Our process is transparent and supportive from initial inquiry to enrollment."
         />
         <ol className="mt-8 grid gap-5 md:grid-cols-2">
-          {processSteps.map((step) => (
-            <li key={step.step} className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-white/15 dark:bg-white/[0.04]">
-              <span className="text-sm font-bold tracking-[0.14em] text-cyan-600 dark:text-cyan-300">{step.step}</span>
-              <h3 className="mt-2 text-xl font-semibold text-slate-900 dark:text-white">{step.title}</h3>
-              <p className="mt-3 text-slate-700 dark:text-slate-300">{step.description}</p>
+          {processSteps.map((step, index) => (
+            <li key={step.step} className="play-card">
+              <span className={`sticker ${index % 2 === 0 ? "bg-[#ffd84d]" : "bg-[#2ee881]"}`}>{step.step}</span>
+              <h3 className="mt-4 text-xl font-semibold text-[#15112b]">{step.title}</h3>
+              <p className="mt-3 font-medium leading-7 text-[#5b5570]">{step.description}</p>
             </li>
           ))}
         </ol>
@@ -52,20 +52,20 @@ export default function AdmissionsPage() {
 
       <section className="section-wrap grid gap-6 md:grid-cols-2">
         <article className="glass-panel p-6">
-          <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">Eligibility & Class Overview</h2>
-          <ul className="mt-5 space-y-3 text-slate-700 dark:text-slate-300">
+          <h2 className="text-3xl font-semibold text-[#15112b]">Eligibility & Class Overview</h2>
+          <ul className="mt-5 space-y-3 font-medium text-[#5b5570]">
             {eligibility.map((item) => (
-              <li key={item} className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 dark:border-white/10 dark:bg-white/[0.03]">
+              <li key={item} className="rounded-2xl bg-[#fff3dc] px-4 py-3">
                 {item}
               </li>
             ))}
           </ul>
         </article>
         <article id="documents" className="glass-panel p-6">
-          <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">Documents Required</h2>
-          <ul className="mt-5 space-y-3 text-slate-700 dark:text-slate-300">
+          <h2 className="text-3xl font-semibold text-[#15112b]">Documents Required</h2>
+          <ul className="mt-5 space-y-3 font-medium text-[#5b5570]">
             {documents.map((item) => (
-              <li key={item} className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 dark:border-white/10 dark:bg-white/[0.03]">
+              <li key={item} className="rounded-2xl bg-[#fff3dc] px-4 py-3">
                 {item}
               </li>
             ))}

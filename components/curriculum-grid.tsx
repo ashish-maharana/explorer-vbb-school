@@ -13,10 +13,10 @@ const skillTags: Record<string, string[]> = {
 export function CurriculumGrid({ items }: { items: CurriculumCardItem[] }) {
   return (
     <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {items.map((item) => (
+      {items.map((item, index) => (
         <article
           key={item.title}
-          className="curriculum-card group glass-panel overflow-hidden border border-slate-200/80 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/80 hover:shadow-[0_14px_32px_rgba(14,165,233,0.2)] dark:border-white/15 dark:hover:border-cyan-300/50"
+          className="curriculum-card group overflow-hidden rounded-[1.5rem] border-2 border-white bg-white shadow-[0_18px_42px_rgba(21,17,43,0.08)] transition duration-300 hover:-translate-y-1"
         >
           <Image
             src={item.imageSrc}
@@ -26,13 +26,15 @@ export function CurriculumGrid({ items }: { items: CurriculumCardItem[] }) {
             className="aspect-[4/3] w-full object-cover object-center transition duration-500 group-hover:scale-[1.04]"
           />
           <div className="p-5">
-            <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">{item.title}</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-700 dark:text-slate-300">{item.description}</p>
+            <h3 className="text-xl font-semibold text-[#15112b]">{item.title}</h3>
+            <p className="mt-3 text-sm font-medium leading-6 text-[#5b5570]">{item.description}</p>
             <div className="mt-4 flex flex-wrap gap-2 opacity-90 transition group-hover:opacity-100">
               {(skillTags[item.title] ?? ["Future Ready", "Creative", "Focused"]).map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex -translate-y-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-2.5 py-1 text-[11px] font-medium text-cyan-700 transition duration-300 group-hover:translate-y-0 dark:border-cyan-300/35 dark:bg-cyan-300/10 dark:text-cyan-200"
+                  className={`inline-flex -translate-y-1 rounded-full px-2.5 py-1 text-[11px] font-extrabold text-[#15112b] transition duration-300 group-hover:translate-y-0 ${
+                    index % 3 === 0 ? "bg-[#ffd84d]" : index % 3 === 1 ? "bg-[#2ee881]" : "bg-[#22c7e8]"
+                  }`}
                 >
                   {tag}
                 </span>

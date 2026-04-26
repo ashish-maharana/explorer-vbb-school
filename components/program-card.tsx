@@ -9,15 +9,15 @@ type ProgramCardProps = {
 
 export function ProgramCard({ title, description, icon, tag }: ProgramCardProps) {
   return (
-    <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-cyan-400/70 hover:shadow-[0_0_35px_rgba(56,189,248,0.15)] dark:border-slate-700/80 dark:bg-slate-950/60">
+    <article className="play-card transition hover:-translate-y-1">
       <div className="flex items-start justify-between gap-4">
-        <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-700 dark:text-cyan-200">
+        <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#ffd84d] text-[#6d1b7b]">
           <IconGlyph name={icon} />
         </div>
-        {tag ? <span className="rounded-full border border-slate-300 px-3 py-1 text-xs text-slate-600 dark:border-slate-600 dark:text-slate-300">{tag}</span> : null}
+        {tag ? <span className="sticker bg-[#2ee881]">{tag}</span> : null}
       </div>
-      <h3 className="mt-4 text-xl font-semibold text-slate-900 dark:text-white">{title}</h3>
-      <p className="mt-3 text-slate-700 dark:text-slate-300">{description}</p>
+      <h3 className="mt-4 text-xl font-semibold text-[#15112b]">{title}</h3>
+      <p className="mt-3 font-medium leading-7 text-[#5b5570]">{description}</p>
     </article>
   );
 }

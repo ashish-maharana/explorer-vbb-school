@@ -2,8 +2,11 @@ import type {
   AdmissionsUpdatesContent,
   CoCurricularItem,
   CurriculumCardItem,
+  FeatureItem,
+  GalleryItem,
   HeroContent,
   LegacyStatItem,
+  TimelineItem,
 } from "@/lib/types";
 
 export const homeHero: HeroContent = {
@@ -11,6 +14,8 @@ export const homeHero: HeroContent = {
   title: "Where Young Minds Explore the Future",
   description:
     "At Explorer & V.B.B. English Medium School, students build strong academic foundations while developing confidence, creativity, communication, and character for a fast-changing world.",
+  imageSrc: "/images/home/learning-campus.webp",
+  imageAlt: "Explorer school students and campus learning moments",
   primaryCta: { label: "Admissions Open", href: "/admissions" },
   secondaryCta: { label: "Explore Programs", href: "/academics" },
 };
@@ -48,6 +53,120 @@ export const legacyStats: LegacyStatItem[] = [
   { value: "30+", label: "Staff" },
   { value: "10+", label: "Classrooms" },
   { value: "5,000+", label: "Alumni" },
+];
+
+export const homeHighlights: FeatureItem[] = [
+  {
+    title: "Strong Academics",
+    description: "Concept clarity, regular practice, and guided classroom support help students build confident foundations.",
+    icon: "BookMarked",
+  },
+  {
+    title: "Values-Led Culture",
+    description: "Discipline, respect, responsibility, and care shape the way students learn and interact every day.",
+    icon: "ShieldCheck",
+  },
+  {
+    title: "Confidence Building",
+    description: "Speaking, events, activities, and teacher mentoring help children express themselves with courage.",
+    icon: "Megaphone",
+  },
+  {
+    title: "Future Learning",
+    description: "Digital awareness, practical thinking, and innovation habits prepare students for the world ahead.",
+    icon: "Rocket",
+  },
+];
+
+export const homeLearningPathway: TimelineItem[] = [
+  {
+    year: "Step 1",
+    title: "Foundations First",
+    description: "Students strengthen reading, writing, numeracy, discipline, and classroom confidence.",
+  },
+  {
+    year: "Step 2",
+    title: "Explore and Apply",
+    description: "Lessons connect with activities, discussion, observation, and real examples.",
+  },
+  {
+    year: "Step 3",
+    title: "Speak, Lead, Participate",
+    description: "Children build confidence through presentation, teamwork, events, and co-curricular opportunities.",
+  },
+  {
+    year: "Step 4",
+    title: "Future-Ready Growth",
+    description: "Learners develop digital thinking, problem-solving, values, and independent learning habits.",
+  },
+];
+
+export const homeCampusMoments: GalleryItem[] = [
+  {
+    src: "/images/activities/students-in-action.webp",
+    alt: "Explorer school students participating in an activity",
+    title: "Students in Action",
+  },
+  {
+    src: "/images/activities/sports-day-medal-winners.webp",
+    alt: "Explorer school sports day medal winners",
+    title: "Sports Day Pride",
+  },
+  {
+    src: "/images/activities/all-smiles.webp",
+    alt: "Explorer school students smiling during a trip",
+    title: "Happy Campus Moments",
+  },
+  {
+    src: "/images/activities/teachers-award-medals-to-winners.webp",
+    alt: "Teachers awarding medals to Explorer school students",
+    title: "Celebrating Effort",
+  },
+];
+
+export const homeAdmissionsPreview = [
+  {
+    step: "01",
+    title: "Connect with School",
+    description: "Call or visit us to explore class availability, schedules, fees, and the admission process in detail.",
+  },
+  {
+    step: "02",
+    title: "Meet and Discuss",
+    description: "Share your child's learning needs and get clarity on academics, activities, and school culture.",
+  },
+  {
+    step: "03",
+    title: "Complete Admission",
+    description: "Submit required documents and complete enrollment formalities with admission guidance.",
+  },
+];
+
+export const homeQuickLinks = [
+  {
+    title: "Academics",
+    description: "Explore curriculum, pedagogy, and learning stages.",
+    icon: "School",
+    href: "/academics",
+  },
+  {
+    title: "Activities",
+    description: "See sports, music, events, yoga, and campus life.",
+    icon: "Trophy",
+    href: "/activities",
+  },
+  {
+    title: "AI Learning",
+    description: "Discover future skills, coding, and responsible tech use.",
+    icon: "BotMessageSquare",
+    href: "/ai-learning",
+  },
+  {
+    title: "Admissions",
+    description: "Check process, documents, and admission guidance.",
+    icon: "ClipboardCheck",
+    href: "/admissions",
+  },
 ];
 
 export const principalSection = {

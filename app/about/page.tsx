@@ -25,19 +25,19 @@ export const metadata = createPageMetadata({
 
 export default function AboutPage() {
   return (
-    <div className="pb-10">
+    <div className="page-grid pb-10">
       <section className="section-wrap rounded-3xl p-2">
         <PageHero content={aboutHero} />
       </section>
 
       <section className="section-wrap grid gap-6 lg:grid-cols-2">
         <article className="glass-panel p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-600 dark:text-cyan-300">Mission</p>
-          <p className="mt-4 text-lg text-slate-700 dark:text-slate-200">{missionVision.mission}</p>
+          <p className="sticker bg-[#ffd84d]">Mission</p>
+          <p className="mt-4 text-lg font-medium leading-8 text-[#5b5570]">{missionVision.mission}</p>
         </article>
         <article className="glass-panel p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-600 dark:text-cyan-300">Vision</p>
-          <p className="mt-4 text-lg text-slate-700 dark:text-slate-200">{missionVision.vision}</p>
+          <p className="sticker bg-[#2ee881]">Vision</p>
+          <p className="mt-4 text-lg font-medium leading-8 text-[#5b5570]">{missionVision.vision}</p>
         </article>
       </section>
 
@@ -53,13 +53,15 @@ export default function AboutPage() {
 
       <div className="beam-divider section-wrap" aria-hidden="true" />
 
-      <section className="section-wrap">
-        <SectionHeader
-          eyebrow="Core Values"
-          title="Our Culture Is Built on Purpose"
-          description="These values shape the way we teach, mentor, and prepare students for life."
-        />
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="section-wrap rounded-[2rem] bg-white/80 p-5 shadow-[0_22px_60px_rgba(21,17,43,0.07)] sm:p-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="sticker mx-auto bg-[#ffd84d] text-[#15112b]">Core Values</span>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight text-[#15112b] sm:text-5xl">Our Culture Is Built on Purpose</h2>
+          <p className="mt-4 text-base font-medium leading-7 text-[#4b4564]">
+            These values shape the way we teach, mentor, and prepare students for life.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {coreValues.map((value) => (
             <Reveal key={value.title}>
               <GlowCard {...value} />
@@ -68,30 +70,34 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-wrap grid gap-8 lg:grid-cols-[1.15fr_1fr]">
+      <section className="section-wrap rounded-[2rem] bg-[#fff3dc] p-6 shadow-[0_22px_60px_rgba(21,17,43,0.07)] sm:p-10">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <SectionHeader
-            eyebrow="School Philosophy"
-            title="How We Shape Future-Ready Learners"
-            description="Our educational philosophy evolves across foundational learning, communication growth, and innovation mindset."
-          />
+          <span className="sticker bg-[#ffd84d] text-[#15112b]">School Philosophy</span>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight text-[#15112b] sm:text-4xl">How We Shape Future-Ready Learners</h2>
+          <p className="mt-4 text-base font-medium leading-7 text-[#4b4564]">
+            Our educational philosophy evolves across foundational learning, communication growth, and innovation mindset.
+          </p>
           <div className="mt-6">
             <Timeline items={philosophyTimeline} />
           </div>
         </div>
         <div>
-          <SectionHeader
-            eyebrow="What Makes Us Different"
-            title="Designed for Real Student Growth"
-            description="Families value our balanced focus on academics, confidence, and future fluency."
-          />
-          <div className="mt-6 space-y-5">
+          <span className="sticker bg-[#2ee881] text-[#15112b]">What Makes Us Different</span>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight text-[#15112b] sm:text-4xl">Designed for Real Student Growth</h2>
+          <p className="mt-4 text-base font-medium leading-7 text-[#4b4564]">
+            Families value our balanced focus on academics, confidence, and future fluency.
+          </p>
+          <div className="mt-6 divide-y-2 divide-[#15112b]/10 rounded-[1.5rem] bg-white/55 px-5">
             {differentiators.map((item) => (
               <Reveal key={item.title}>
-                <GlowCard {...item} />
+                <div className="py-6">
+                  <GlowCard {...item} variant="flat" />
+                </div>
               </Reveal>
             ))}
           </div>
+        </div>
         </div>
       </section>
 

@@ -5,6 +5,8 @@ export const activitiesHero: HeroContent = {
   title: "Beyond the Classroom, Beyond Limits",
   description:
     "Our co-curricular ecosystem helps students grow through creativity, fitness, discipline, leadership, and joyful collaboration.",
+  imageSrc: "/images/activities/sports-day-medal-winners.webp",
+  imageAlt: "Explorer school students celebrating sports day achievements",
   primaryCta: { label: "Explore Admissions", href: "/admissions" },
   secondaryCta: { label: "Contact School", href: "/contact" },
 };

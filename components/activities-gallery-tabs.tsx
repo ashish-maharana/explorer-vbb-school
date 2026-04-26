@@ -15,10 +15,10 @@ function GalleryGrid({ items }: { items: GalleryItem[] }) {
   return (
     <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((item) => (
-        <article key={`${item.title}-${item.src}`} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/15 dark:bg-white/5">
+        <article key={`${item.title}-${item.src}`} className="overflow-hidden rounded-[1.5rem] border-2 border-white bg-white shadow-[0_18px_42px_rgba(21,17,43,0.08)]">
           <Image src={item.src} alt={item.alt} width={960} height={640} className="h-56 w-full object-cover" />
           <div className="p-5">
-            <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{item.title}</h3>
+            <h3 className="text-lg font-semibold text-[#15112b]">{item.title}</h3>
           </div>
         </article>
       ))}
@@ -34,7 +34,7 @@ export function ActivitiesGalleryTabs({ campusItems, schoolTripItems }: Activiti
 
   return (
     <div>
-      <div role="tablist" aria-label="Activities gallery tabs" className="flex items-center gap-6 border-b border-slate-300/70 pb-3 dark:border-white/15">
+      <div role="tablist" aria-label="Activities gallery tabs" className="flex flex-wrap items-center gap-3">
         <button
           type="button"
           role="tab"
@@ -42,17 +42,11 @@ export function ActivitiesGalleryTabs({ campusItems, schoolTripItems }: Activiti
           aria-selected={activeTab === "campus"}
           aria-controls={campusPanelId}
           onClick={() => setActiveTab("campus")}
-          className={`relative pb-2 text-sm font-semibold uppercase tracking-[0.12em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:focus-visible:ring-cyan-300 ${
-            activeTab === "campus" ? "text-cyan-700 dark:text-cyan-200" : "text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+          className={`rounded-full px-4 py-2 text-sm font-extrabold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6d1b7b] ${
+            activeTab === "campus" ? "bg-[#ffd84d] text-[#15112b]" : "bg-white text-[#5b5570] hover:bg-[#fff3dc]"
           }`}
         >
           Campus Life
-          <span
-            aria-hidden="true"
-            className={`absolute bottom-0 left-0 h-[2px] w-full bg-cyan-500 transition dark:bg-cyan-300 ${
-              activeTab === "campus" ? "opacity-100" : "opacity-0"
-            }`}
-          />
         </button>
         <button
           type="button"
@@ -61,17 +55,11 @@ export function ActivitiesGalleryTabs({ campusItems, schoolTripItems }: Activiti
           aria-selected={activeTab === "school-trips"}
           aria-controls={tripsPanelId}
           onClick={() => setActiveTab("school-trips")}
-          className={`relative pb-2 text-sm font-semibold uppercase tracking-[0.12em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:focus-visible:ring-cyan-300 ${
-            activeTab === "school-trips" ? "text-cyan-700 dark:text-cyan-200" : "text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+          className={`rounded-full px-4 py-2 text-sm font-extrabold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6d1b7b] ${
+            activeTab === "school-trips" ? "bg-[#2ee881] text-[#15112b]" : "bg-white text-[#5b5570] hover:bg-[#fff3dc]"
           }`}
         >
           School Trips
-          <span
-            aria-hidden="true"
-            className={`absolute bottom-0 left-0 h-[2px] w-full bg-cyan-500 transition dark:bg-cyan-300 ${
-              activeTab === "school-trips" ? "opacity-100" : "opacity-0"
-            }`}
-          />
         </button>
       </div>
 

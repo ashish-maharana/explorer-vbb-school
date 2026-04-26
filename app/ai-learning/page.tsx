@@ -15,7 +15,7 @@ export const metadata = createPageMetadata({
 
 export default function AiLearningPage() {
   return (
-    <div className="pb-10">
+    <div className="page-grid pb-10">
       <section className="section-wrap rounded-3xl p-2">
         <PageHero content={aiHero} />
       </section>
@@ -53,10 +53,12 @@ export default function AiLearningPage() {
           description="Our programs strengthen both technical and human abilities that matter for future success."
         />
         <div className="mt-8 flex flex-wrap gap-3">
-          {tomorrowSkills.map((skill) => (
+          {tomorrowSkills.map((skill, index) => (
             <span
               key={skill}
-              className="rounded-full border border-cyan-500/35 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-800 dark:border-cyan-300/35 dark:bg-cyan-300/10 dark:text-cyan-100"
+              className={`sticker px-4 py-2 text-sm ${
+                index % 4 === 0 ? "bg-[#ffd84d]" : index % 4 === 1 ? "bg-[#2ee881]" : index % 4 === 2 ? "bg-[#22c7e8]" : "bg-[#f45fa2] text-white"
+              }`}
             >
               {skill}
             </span>

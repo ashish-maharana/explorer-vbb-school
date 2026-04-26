@@ -7,6 +7,8 @@ export type HeroContent = {
   eyebrow: string;
   title: string;
   description: string;
+  imageSrc?: string;
+  imageAlt?: string;
   primaryCta: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
 };

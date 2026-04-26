@@ -13,17 +13,17 @@ export function FaqAccordion({ items }: { items: Item[] }) {
       {items.map((item, idx) => {
         const open = openIndex === idx;
         return (
-          <article key={item.question} className="rounded-2xl border border-slate-200 bg-white dark:border-white/15 dark:bg-white/[0.04]">
+          <article key={item.question} className="overflow-hidden rounded-[1.35rem] border-2 border-white bg-white shadow-[0_14px_34px_rgba(21,17,43,0.07)]">
             <button
               type="button"
-              className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+              className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6d1b7b]"
               aria-expanded={open}
               onClick={() => setOpenIndex(open ? null : idx)}
             >
-              <span className="font-medium text-slate-900 dark:text-white">{item.question}</span>
-              <ChevronDown className={`h-5 w-5 shrink-0 text-cyan-700 transition dark:text-cyan-200 ${open ? "rotate-180" : ""}`} />
+              <span className="font-extrabold text-[#15112b]">{item.question}</span>
+              <ChevronDown className={`h-5 w-5 shrink-0 text-[#6d1b7b] transition ${open ? "rotate-180" : ""}`} />
             </button>
-            {open ? <p className="px-5 pb-5 text-slate-700 dark:text-slate-300">{item.answer}</p> : null}
+            {open ? <p className="px-5 pb-5 font-medium leading-7 text-[#5b5570]">{item.answer}</p> : null}
           </article>
         );
       })}

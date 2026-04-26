@@ -12,6 +12,8 @@ export const aboutHero: HeroContent = {
   title: "Built on Values, Driven by the Future",
   description:
     "Explorer & V.B.B. English Medium School nurtures capable, caring, and confident learners through disciplined values and forward-looking education.",
+  imageSrc: "/images/activities/all-smiles.webp",
+  imageAlt: "Explorer school students smiling during a school activity",
   primaryCta: { label: "View Academics", href: "/academics" },
   secondaryCta: { label: "Admissions Open", href: "/admissions" },
 };
@@ -27,7 +29,7 @@ export const coreValues: FeatureItem[] = [
   { title: "Integrity", description: "We cultivate honesty, discipline, and accountability in daily school life.", icon: "ShieldCheck" },
   { title: "Curiosity", description: "Students are encouraged to ask, explore, and think beyond textbook answers.", icon: "Lightbulb" },
   { title: "Respect", description: "We foster empathy, collaboration, and inclusive behavior in every classroom.", icon: "Handshake" },
-  { title: "Excellence", description: "We pursue consistent progress through high standards and personalized support.", icon: "Award" },
+  { title: "Excellence", description: "We pursue progress through high standards and personal support.", icon: "Award" },
 ];
 
 export const differentiators: FeatureItem[] = [

@@ -27,14 +27,14 @@ function PeopleCardsGrid({ members, imageClassName }: { members: PersonProfile[]
 export function AboutPeopleTabs({ management, faculty }: AboutPeopleTabsProps) {
   const [activeTab, setActiveTab] = useState<TabKey>("management");
   const tabsBaseId = useId();
-  const unifiedPortraitImageClass = "h-80 object-contain object-top bg-slate-50 dark:bg-slate-900/40";
+  const unifiedPortraitImageClass = "h-80 object-contain object-top bg-[#fff3dc]";
 
   const managementPanelId = `${tabsBaseId}-management-panel`;
   const facultyPanelId = `${tabsBaseId}-faculty-panel`;
 
   return (
     <section className="section-wrap">
-      <div role="tablist" aria-label="About people sections" className="flex items-center gap-6 border-b border-slate-300/70 pb-3 dark:border-white/15">
+      <div role="tablist" aria-label="About people sections" className="flex flex-wrap items-center gap-3">
         <button
           type="button"
           role="tab"
@@ -42,17 +42,11 @@ export function AboutPeopleTabs({ management, faculty }: AboutPeopleTabsProps) {
           aria-selected={activeTab === "management"}
           aria-controls={managementPanelId}
           onClick={() => setActiveTab("management")}
-          className={`relative pb-2 text-sm font-semibold uppercase tracking-[0.12em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:focus-visible:ring-cyan-300 ${
-            activeTab === "management" ? "text-cyan-700 dark:text-cyan-200" : "text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+          className={`rounded-full px-4 py-2 text-sm font-extrabold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6d1b7b] ${
+            activeTab === "management" ? "bg-[#ffd84d] text-[#15112b]" : "bg-white text-[#5b5570] hover:bg-[#fff3dc]"
           }`}
         >
           Management
-          <span
-            aria-hidden="true"
-            className={`absolute bottom-0 left-0 h-[2px] w-full bg-cyan-500 transition dark:bg-cyan-300 ${
-              activeTab === "management" ? "opacity-100" : "opacity-0"
-            }`}
-          />
         </button>
         <button
           type="button"
@@ -61,17 +55,11 @@ export function AboutPeopleTabs({ management, faculty }: AboutPeopleTabsProps) {
           aria-selected={activeTab === "faculty"}
           aria-controls={facultyPanelId}
           onClick={() => setActiveTab("faculty")}
-          className={`relative pb-2 text-sm font-semibold uppercase tracking-[0.12em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:focus-visible:ring-cyan-300 ${
-            activeTab === "faculty" ? "text-cyan-700 dark:text-cyan-200" : "text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+          className={`rounded-full px-4 py-2 text-sm font-extrabold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6d1b7b] ${
+            activeTab === "faculty" ? "bg-[#2ee881] text-[#15112b]" : "bg-white text-[#5b5570] hover:bg-[#fff3dc]"
           }`}
         >
           Faculty
-          <span
-            aria-hidden="true"
-            className={`absolute bottom-0 left-0 h-[2px] w-full bg-cyan-500 transition dark:bg-cyan-300 ${
-              activeTab === "faculty" ? "opacity-100" : "opacity-0"
-            }`}
-          />
         </button>
       </div>
 
@@ -85,17 +73,17 @@ export function AboutPeopleTabs({ management, faculty }: AboutPeopleTabsProps) {
           <PeopleCardsGrid members={management.leaders} imageClassName={unifiedPortraitImageClass} />
 
           <article className="signal-card glass-panel relative mt-10 overflow-hidden p-7 sm:p-9">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-600 dark:text-cyan-300">
+            <p className="sticker bg-[#ffd84d]">
               {management.chairmanMessage.title}
             </p>
-            <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base dark:text-slate-300">
+            <p className="mt-4 text-sm font-medium leading-7 text-[#5b5570] sm:text-base">
               {management.chairmanMessage.intro}
             </p>
-            <blockquote className="mt-6 border-l-2 border-cyan-400/40 pl-5 text-lg italic leading-8 text-slate-800 dark:text-slate-100">
+            <blockquote className="mt-6 border-l-4 border-[#f45fa2] pl-5 text-lg font-semibold italic leading-8 text-[#15112b]">
               &ldquo;{management.chairmanMessage.quote}&rdquo;
             </blockquote>
-            <p className="mt-3 text-sm font-semibold text-slate-600 dark:text-slate-300">{management.chairmanMessage.quoteSource}</p>
-            <div className="mt-6 space-y-4 text-sm leading-7 text-slate-700 sm:text-base dark:text-slate-300">
+            <p className="mt-3 text-sm font-extrabold text-[#6d1b7b]">{management.chairmanMessage.quoteSource}</p>
+            <div className="mt-6 space-y-4 text-sm font-medium leading-7 text-[#5b5570] sm:text-base">
               {management.chairmanMessage.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -109,7 +97,7 @@ export function AboutPeopleTabs({ management, faculty }: AboutPeopleTabsProps) {
           aria-labelledby={`${tabsBaseId}-faculty-tab`}
           className="mt-6"
         >
-          <p className="text-sm leading-7 text-slate-700 sm:text-base dark:text-slate-300">{faculty.quickIntro}</p>
+          <p className="text-sm font-medium leading-7 text-[#5b5570] sm:text-base">{faculty.quickIntro}</p>
 
           <PeopleCardsGrid members={faculty.members} imageClassName={unifiedPortraitImageClass} />
         </div>

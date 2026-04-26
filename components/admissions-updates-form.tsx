@@ -2,10 +2,10 @@ import type { AdmissionsUpdatesContent } from "@/lib/types";
 
 export function AdmissionsUpdatesForm({ content }: { content: AdmissionsUpdatesContent }) {
   return (
-    <section className="rounded-3xl border border-cyan-300/50 bg-gradient-to-br from-blue-600 to-cyan-600 p-7 shadow-sm sm:p-10 dark:border-cyan-300/35 dark:from-blue-700 dark:to-cyan-700">
+    <section className="scallop-y rounded-[2rem] bg-[#ff6b35] p-7 text-white shadow-[0_24px_64px_rgba(255,107,53,0.22)] sm:p-10">
       <div className="mx-auto max-w-3xl">
-        <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">{content.title}</h2>
-        <p className="mt-4 text-sm text-cyan-100">{content.description}</p>
+        <h2 className="text-3xl font-semibold leading-tight text-white sm:text-5xl">{content.title}</h2>
+        <p className="mt-4 text-sm font-semibold leading-7 text-white/85">{content.description}</p>
 
         <form action="#" className="mt-7 space-y-3" aria-label="Admissions and updates subscription form">
           {content.fields.map((field) => (
@@ -15,7 +15,7 @@ export function AdmissionsUpdatesForm({ content }: { content: AdmissionsUpdatesC
                 type={field.type}
                 name={field.name}
                 placeholder={field.placeholder}
-                className="w-full rounded-md border border-white/40 bg-white/95 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-white focus:ring-2 focus:ring-white/70"
+                className="w-full rounded-2xl border-2 border-white/40 bg-white/95 px-4 py-3 text-sm font-bold text-[#15112b] outline-none transition focus:border-white focus:ring-2 focus:ring-white/70"
               />
             </label>
           ))}
@@ -25,12 +25,12 @@ export function AdmissionsUpdatesForm({ content }: { content: AdmissionsUpdatesC
               name={content.message.name}
               rows={4}
               placeholder={content.message.placeholder}
-              className="w-full rounded-md border border-white/40 bg-white/95 px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-white focus:ring-2 focus:ring-white/70"
+              className="w-full rounded-2xl border-2 border-white/40 bg-white/95 px-4 py-3 text-sm font-bold text-[#15112b] outline-none transition focus:border-white focus:ring-2 focus:ring-white/70"
             />
           </label>
           <button
             type="submit"
-            className="btn-primary !rounded-md !bg-white !px-4 !py-2 !text-blue-700 hover:!bg-cyan-50 focus-visible:!ring-white focus-visible:!ring-offset-transparent"
+            className="btn-primary !bg-white !px-5 !py-3 !text-[#15112b] hover:!bg-[#ffd84d] focus-visible:!ring-white focus-visible:!ring-offset-transparent"
           >
             {content.submitLabel}
           </button>

@@ -15,27 +15,27 @@ export const metadata = createPageMetadata({
 
 export default function ContactPage() {
   return (
-    <div className="pb-10">
+    <div className="page-grid pb-10">
       <section className="section-wrap rounded-3xl p-2">
         <PageHero content={contactHero} />
       </section>
 
       <section className="section-wrap grid gap-5 md:grid-cols-3">
         <article className="glass-panel p-6">
-          <MapPin className="h-6 w-6 text-cyan-600 dark:text-cyan-300" />
-          <h2 className="mt-4 text-lg font-semibold text-slate-900 dark:text-white">Address</h2>
-          <p className="mt-2 text-slate-700 dark:text-slate-300">{site.address}</p>
+          <MapPin className="h-7 w-7 text-[#ff6b35]" />
+          <h2 className="mt-4 text-xl font-semibold text-[#15112b]">Address</h2>
+          <p className="mt-2 font-medium leading-7 text-[#5b5570]">{site.address}</p>
         </article>
         <article className="glass-panel p-6">
-          <Phone className="h-6 w-6 text-cyan-600 dark:text-cyan-300" />
-          <h2 className="mt-4 text-lg font-semibold text-slate-900 dark:text-white">Phone</h2>
-          <p className="mt-2 text-slate-700 dark:text-slate-300">{site.phones[0]}</p>
-          <p className="text-slate-700 dark:text-slate-300">{site.phones[1]}</p>
+          <Phone className="h-7 w-7 text-[#2ee881]" />
+          <h2 className="mt-4 text-xl font-semibold text-[#15112b]">Phone</h2>
+          <p className="mt-2 font-medium text-[#5b5570]">{site.phones[0]}</p>
+          <p className="font-medium text-[#5b5570]">{site.phones[1]}</p>
         </article>
         <article className="glass-panel p-6">
-          <Mail className="h-6 w-6 text-cyan-600 dark:text-cyan-300" />
-          <h2 className="mt-4 text-lg font-semibold text-slate-900 dark:text-white">Email</h2>
-          <p className="mt-2 text-slate-700 dark:text-slate-300">{site.email}</p>
+          <Mail className="h-7 w-7 text-[#f45fa2]" />
+          <h2 className="mt-4 text-xl font-semibold text-[#15112b]">Email</h2>
+          <p className="mt-2 font-medium text-[#5b5570]">{site.email}</p>
         </article>
       </section>
 
@@ -47,21 +47,21 @@ export default function ContactPage() {
             description="This static form is designed for UI preview and can be connected to your preferred lead workflow later."
           />
           <form className="mt-8 grid gap-4" action="#">
-            <label className="text-sm text-slate-700 dark:text-slate-200">
+            <label className="text-sm font-extrabold text-[#15112b]">
               Full Name
-              <input className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none ring-cyan-500 focus:ring-2 dark:border-white/20 dark:bg-slate-900/80 dark:text-slate-100 dark:ring-cyan-300" type="text" />
+              <input className="mt-2 w-full rounded-2xl border-2 border-[#15112b]/10 bg-white px-4 py-3 text-[#15112b] outline-none ring-[#6d1b7b] focus:ring-2" type="text" />
             </label>
-            <label className="text-sm text-slate-700 dark:text-slate-200">
+            <label className="text-sm font-extrabold text-[#15112b]">
               Email
-              <input className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none ring-cyan-500 focus:ring-2 dark:border-white/20 dark:bg-slate-900/80 dark:text-slate-100 dark:ring-cyan-300" type="email" />
+              <input className="mt-2 w-full rounded-2xl border-2 border-[#15112b]/10 bg-white px-4 py-3 text-[#15112b] outline-none ring-[#6d1b7b] focus:ring-2" type="email" />
             </label>
-            <label className="text-sm text-slate-700 dark:text-slate-200">
+            <label className="text-sm font-extrabold text-[#15112b]">
               Phone
-              <input className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none ring-cyan-500 focus:ring-2 dark:border-white/20 dark:bg-slate-900/80 dark:text-slate-100 dark:ring-cyan-300" type="tel" />
+              <input className="mt-2 w-full rounded-2xl border-2 border-[#15112b]/10 bg-white px-4 py-3 text-[#15112b] outline-none ring-[#6d1b7b] focus:ring-2" type="tel" />
             </label>
-            <label className="text-sm text-slate-700 dark:text-slate-200">
+            <label className="text-sm font-extrabold text-[#15112b]">
               Message
-              <textarea className="mt-2 min-h-28 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none ring-cyan-500 focus:ring-2 dark:border-white/20 dark:bg-slate-900/80 dark:text-slate-100 dark:ring-cyan-300" />
+              <textarea className="mt-2 min-h-28 w-full rounded-2xl border-2 border-[#15112b]/10 bg-white px-4 py-3 text-[#15112b] outline-none ring-[#6d1b7b] focus:ring-2" />
             </label>
             <button type="button" className="btn-primary w-fit">
               Submit Inquiry
@@ -80,13 +80,13 @@ export default function ContactPage() {
             />
           </article>
           <article className="glass-panel p-6">
-            <h2 className="text-xl font-semibold text-slate-900 dark:text-white">Office Hours</h2>
-            <ul className="mt-4 space-y-2 text-slate-700 dark:text-slate-300">
+            <h2 className="text-2xl font-semibold text-[#15112b]">Office Hours</h2>
+            <ul className="mt-4 space-y-2 font-medium text-[#5b5570]">
               {officeHours.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-            <p className="mt-4 text-sm text-slate-700 dark:text-slate-300">
+            <p className="mt-4 text-sm font-medium text-[#5b5570]">
               For priority admissions support, call during admissions desk hours.
             </p>
           </article>

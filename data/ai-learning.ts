@@ -5,6 +5,8 @@ export const aiHero: HeroContent = {
   title: "AI Learning for the Next Generation",
   description:
     "We introduce students to technology-rich learning through guided, age-appropriate programs that strengthen logic, creativity, and responsible digital behavior.",
+  imageSrc: "/images/home/curriculum-computer-science.webp",
+  imageAlt: "Explorer school computer science learning activity",
   primaryCta: { label: "Discover Admissions", href: "/admissions" },
   secondaryCta: { label: "View Academics", href: "/academics" },
 };
