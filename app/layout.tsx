@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { RouteScrollReset } from "@/components/route-scroll-reset";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 const nunito = Nunito({
   variable: "--font-body",
@@ -40,6 +41,7 @@ export default function RootLayout({
           <Navbar />
           <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">{children}</main>
           <Footer />
+          <WhatsAppFloat />
         </div>
       </body>
     </html>
