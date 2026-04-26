@@ -28,3 +28,11 @@ export const footerLinks = {
     { label: "FAQ", href: "/admissions#faq" },
   ],
 };
+
+export const socialLinks = [
+  { platform: "Facebook", url: "https://facebook.com/", ariaLabel: "Follow us on Facebook" },
+  { platform: "Instagram", url: "https://instagram.com/", ariaLabel: "Follow us on Instagram" },
+  { platform: "YouTube", url: "https://youtube.com/", ariaLabel: "Follow us on YouTube" },
+  { platform: "LinkedIn", url: "https://linkedin.com/", ariaLabel: "Follow us on LinkedIn" },
+  { platform: "X", url: "https://x.com/", ariaLabel: "Follow us on X" },
+] as const;
